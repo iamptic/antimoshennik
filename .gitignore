@@ -1,0 +1,24 @@
+# Build
+build/
+app/build/
+.gradle/
+local.properties
+
+# IDE
+.idea/
+*.iml
+
+# Keys (безопасность!)
+release-key.jks
+*.jks
+.env
+
+# Releases (слишком большие)
+releases/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

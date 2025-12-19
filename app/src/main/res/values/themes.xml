@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Antimoshennik" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+    </style>
+    
+    <style name="Theme.Antimoshennik.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+    </style>
+    
+    <style name="Theme.Antimoshennik.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/gradient_bg</item>
+        <item name="android:statusBarColor">@color/gradient_start</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+    <style name="Theme.Antimoshennik.Alert" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/danger</item>
+        <item name="android:statusBarColor">@color/danger_dark</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

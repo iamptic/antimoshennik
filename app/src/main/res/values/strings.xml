@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Антимошенник</string>
+    <string name="app_description">Защита от телефонных мошенников</string>
+    
+    <!-- Главный экран -->
+    <string name="status_active">🟢 Защита активна</string>
+    <string name="status_inactive">🔴 Защита отключена</string>
+    <string name="btn_start">▶️  ВКЛЮЧИТЬ ЗАЩИТУ</string>
+    <string name="btn_stop">⏹️  ВЫКЛЮЧИТЬ ЗАЩИТУ</string>
+    <string name="btn_test">🧪  ТЕСТ СИСТЕМЫ</string>
+    <string name="btn_settings">⚙️  НАСТРОЙКИ</string>
+    
+    <!-- Уведомления -->
+    <string name="notification_title">Антимошенник активен</string>
+    <string name="notification_text">Защита от мошенников работает</string>
+    
+    <!-- Алерт -->
+    <string name="alert_title">🚨 МОШЕННИКИ! 🚨</string>
+    <string name="alert_subtitle">НЕМЕДЛЕННО ПОЛОЖИТЕ ТРУБКУ!</string>
+    <string name="btn_call_family">📞  ПОЗВОНИТЬ РОДСТВЕННИКАМ</string>
+    <string name="btn_dismiss">✓  Я ВСЁ ПОНЯЛ(А)</string>
+    <string name="widget_description">Показывает статус защиты</string>
+</resources>

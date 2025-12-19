@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_bg">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:progressDrawable="@drawable/progress_wizard"
+        android:max="7"
+        android:progress="1"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/contentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvEmoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🛡️"
+                android:textSize="60sp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Заголовок"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Описание"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:alpha="0.9"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.3"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tvWarning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#40FF0000"
+                android:padding="10dp"
+                android:text="⛔ Требуется для работы"
+                android:textColor="#FFCCCC"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="12dp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/inputContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/inputPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="+7 XXX XXX XX XX"
+                    android:textColorHint="#80FFFFFF"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:inputType="phone"
+                    android:background="@drawable/input_rounded"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnAction"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/btn_white_outline"
+                android:text="Настроить"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/dotsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/btn_success"
+            android:text="ДАЛЕЕ →"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </LinearLayout>
+</LinearLayout>

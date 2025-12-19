@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alertBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DC2626">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <!-- Animated Warning Icon -->
+            <FrameLayout
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Pulse ring 1 -->
+                <View
+                    android:id="@+id/pulseRing1"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/alert_pulse_ring"
+                    android:alpha="0"/>
+
+                <!-- Pulse ring 2 -->
+                <View
+                    android:id="@+id/pulseRing2"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/alert_pulse_ring"
+                    android:alpha="0"/>
+
+                <!-- Warning icon -->
+                <TextView
+                    android:id="@+id/iconWarning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="⚠️"
+                    android:textSize="72sp"/>
+            </FrameLayout>
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvAlertTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="МОШЕННИК!"
+                android:textSize="36sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvAlertSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ПОЛОЖИТЕ ТРУБКУ"
+                android:textSize="18sp"
+                android:textColor="#FCA5A5"
+                android:gravity="center"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Score Badge -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/score_badge">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="335"
+                        android:textSize="40sp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="баллов"
+                        android:textSize="14sp"
+                        android:textColor="#FCA5A5"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Warning bar -->
+            <TextView
+                android:id="@+id/tvWarningBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FBBF24"
+                android:text="⚠️ ВОЗМОЖНО МОШЕННИЧЕСТВО ⚠️"
+                android:textColor="#78350F"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="14dp"/>
+
+            <!-- Details -->
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Обнаружены признаки мошенничества"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:alpha="0.9"
+                android:lineSpacingMultiplier="1.4"
+                android:padding="20dp"
+                android:background="#20FFFFFF"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Auto call info -->
+            <TextView
+                android:id="@+id/tvAutoCallInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📞 Звоним родственнику..."
+                android:textSize="16sp"
+                android:textColor="#4ADE80"
+                android:visibility="gone"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#B91C1C">
+
+        <TextView
+            android:id="@+id/btnCallFamily"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/btn_success"
+            android:text="📞 ПОЗВОНИТЬ РОДСТВЕННИКУ"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/btnDismiss"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#40FFFFFF"
+            android:text="Я ВСЁ ПОНЯЛ(А)"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:gravity="center"/>
+    </LinearLayout>
+</FrameLayout>

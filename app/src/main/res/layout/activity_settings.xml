@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="←"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚙️ Настройки"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Permissions Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📱 РАЗРЕШЕНИЯ"
+            android:textSize="13sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="12dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPermissions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Storage -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📁"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Доступ к файлам"
+                        android:textSize="15sp"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvPermStorage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✅"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
+                <!-- Notifications -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔔"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Уведомления"
+                        android:textSize="15sp"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvPermNotifications"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✅"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
+                <!-- Phone -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📞"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Телефонные звонки"
+                        android:textSize="15sp"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvPermPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✅"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
+                <!-- Battery -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔋"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Работа в фоне"
+                        android:textSize="15sp"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvPermBattery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✅"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
+                <!-- Button to fix -->
+                <TextView
+                    android:id="@+id/btnFixPermissions"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/btn_primary"
+                    android:text="Дать разрешения"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- SOS Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🚨 ЭКСТРЕННАЯ СВЯЗЬ"
+            android:textSize="13sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="12dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSosPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📞"
+                    android:textSize="28sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Номер родственника"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvPhoneValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Не указан"
+                        android:textSize="15sp"
+                        android:textColor="@color/danger"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="На этот номер позвоним при угрозе"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textSize="24sp"
+                    android:textColor="@color/text_secondary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔔"
+                    android:textSize="28sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Авто-звонок"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3 звонка подряд при обнаружении мошенника"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switchAutoCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        
+        <!-- Telegram Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📱 TELEGRAM"
+            android:textSize="13sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="12dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✈️"
+                    android:textSize="28sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Уведомления в Telegram"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Родственник получит сообщение при угрозе"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switchTelegram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTelegramId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🆔"
+                    android:textSize="28sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Telegram ID получателя"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvTelegramId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Не указан"
+                        android:textSize="15sp"
+                        android:textColor="@color/danger"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ID можно получить от @AntimoshennikBot"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textSize="24sp"
+                    android:textColor="@color/text_secondary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Analysis Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔍 АНАЛИЗ ЗВОНКОВ"
+            android:textSize="13sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="12dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardThreshold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎚️"
+                    android:textSize="28sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Чувствительность"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvThresholdValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="80 баллов"
+                        android:textSize="15sp"
+                        android:textColor="@color/primary"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Меньше = чаще алерты\nБольше = только явные угрозы"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textSize="24sp"
+                    android:textColor="@color/text_secondary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Whitelist Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✅ ДОВЕРЕННЫЕ НОМЕРА"
+            android:textSize="13sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="12dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardWhitelist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📋"
+                    android:textSize="28sp"
+                    android:layout_marginEnd="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Белый список"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+
+                    <TextView
+                        android:id="@+id/tvWhitelistValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 номеров"
+                        android:textSize="15sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="2dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Звонки с этих номеров не проверяются"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textSize="24sp"
+                    android:textColor="@color/text_secondary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Version -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Антимошенник v1.0"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</ScrollView>

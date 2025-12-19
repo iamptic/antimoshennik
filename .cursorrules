@@ -1,0 +1,107 @@
+# Антимошенник - Android Application
+# Cursor Rules для разработки
+
+## О проекте
+
+**Название:** Антимошенник
+**Платформа:** Android (Kotlin)
+**Минимальный API:** 24 (Android 7.0)
+**Целевой API:** 34 (Android 14)
+**Магазин:** RuStore
+**Версия:** 1.0.1 (versionCode: 3)
+
+**Цель:** Защита пожилых людей от телефонных мошенников путём анализа записей звонков.
+
+## Структура проекта
+
+```
+app/src/main/java/com/antimoshennik/app/
+├── MainActivity.kt              # Главный экран (Dashboard)
+├── AlertActivity.kt             # Экран алерта при угрозе
+├── SettingsActivity.kt          # Настройки приложения
+├── SplashActivity.kt            # Стартовый экран
+├── WizardActivity.kt            # Онбординг + настройка
+├── CallRecordMonitorService.kt  # Foreground Service мониторинга
+├── SpeechRecognizer.kt          # Vosk офлайн распознавание
+├── FraudDetector.kt             # Детектор мошенничества
+├── PatternUpdater.kt            # Обновление базы паттернов
+├── TelegramNotifier.kt          # Telegram уведомления
+├── AppWidget.kt                 # Виджет 2x1
+├── Settings.kt                  # SharedPreferences wrapper
+├── AnalysisHistory.kt           # История проверок
+├── CallHelper.kt                # SOS звонки
+├── AlertNotification.kt         # Уведомления
+├── DeviceHelper.kt              # Определение устройства
+└── BootReceiver.kt              # Автозапуск при загрузке
+```
+
+## Правила разработки
+
+### Kotlin Style
+- Предпочитать val над var
+- Использовать scope functions (let, apply, also)
+- Корутины для асинхронных операций
+- Логирование: Log.d(TAG, "message")
+
+### UI/UX для пожилых
+- Минимальный touch target: 48dp
+- Размер текста: 16sp минимум
+- Высокий контраст цветов
+- Понятные emoji вместо иконок
+
+### Цвета
+- primary: #6366F1 (индиго)
+- success: #10B981 (зелёный)
+- danger: #EF4444 (красный)
+- background: #F3F4F6
+
+## Сборка
+
+```bash
+cd /Users/danila/Desktop/antimoshennik
+./gradlew assembleRelease
+```
+
+### Установка
+```bash
+ADB=~/Library/Android/sdk/platform-tools/adb
+$ADB install -r app/build/outputs/apk/release/app-release.apk
+```
+
+## Ключевые компоненты
+
+### CallRecordMonitorService
+- Foreground Service с PARTIAL_WAKE_LOCK
+- FileObserver для мониторинга записей
+- Вызывает FraudDetector после звонка
+
+### FraudDetector
+- JSON паттерны мошенничества
+- Комбо-бонусы (служба+банк = +50)
+- Пороги: MEDIUM=40, HIGH=80, CRITICAL=150
+
+### SpeechRecognizer
+- Vosk модель vosk-model-small-ru
+- Декодирование MP3/M4A через MediaCodec
+- Пост-обработка с коррекциями
+
+## Зависимости
+
+```kotlin
+implementation("org.vosk:vosk-android:0.3.47")
+implementation("com.squareup.okhttp3:okhttp:4.12.0")
+implementation("androidx.core:core-ktx:1.12.0")
+implementation("com.google.android.material:material:1.11.0")
+```
+
+## Тестирование
+
+- Устройство: Redmi A5 (Android 13)
+- Путь записей: /storage/emulated/0/Recordings/sound_recorder/call_rec
+- ADB логи: adb logcat -s FraudDetector:D SpeechRecognizer:D
+
+## Release
+
+- Keystore: release-key.jks
+- Alias: antimoshennik
+- Password: antimosh123

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg">
+
+    <LinearLayout
+        android:id="@+id/splashContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/shieldIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🛡️"
+            android:textSize="100sp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Антимошенник"
+            android:textSize="32sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Защита от мошенников"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:alpha="0.8"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</FrameLayout>
