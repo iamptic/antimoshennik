@@ -14,7 +14,7 @@ object PatternUpdater {
     private const val TAG = "PatternUpdater"
     
     // GitHub raw URL - замени на свой репозиторий
-    private const val GITHUB_BASE_URL = "https://raw.githubusercontent.com/pticyn/antimoshennik-patterns/main"
+    private const val GITHUB_BASE_URL = "https://raw.githubusercontent.com/iamptic/antimoshennik-patterns/main"
     private const val PATTERNS_URL = "$GITHUB_BASE_URL/patterns.json"
     private const val VERSION_URL = "$GITHUB_BASE_URL/version.txt"
     
