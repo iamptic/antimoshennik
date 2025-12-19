@@ -163,6 +163,21 @@ class SpeechRecognizer(private val context: Context) {
     }
     
     suspend fun recognizeFromFile(filePath: String): String = withContext(Dispatchers.IO) {
+        // Гибридный режим: сначала Yandex (онлайн), потом Vosk (офлайн)
+        if (YandexSpeechRecognizer.isAvailable(context)) {
+            try {
+                val file = java.io.File(filePath)
+                val result = YandexSpeechRecognizer.recognize(context, file)
+                if (!result.isNullOrBlank()) {
+                    lastMode = "Онлайн (Yandex)"
+                    return@withContext postProcessText(result)
+                }
+            } catch (e: Exception) {
+                android.util.Log.w("SpeechRecognizer", "Yandex failed, fallback to Vosk", e)
+            }
+        }
+        
+        // Fallback на офлайн Vosk
         lastMode = "Офлайн (Vosk)"
         return@withContext recognizeWithVosk(filePath)
     }
